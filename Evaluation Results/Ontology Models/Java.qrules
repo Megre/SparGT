@@ -1,0 +1,19 @@
+
+prefix java: <http://www.semanticweb.org/megre/ontologies/2017/6/Java#>
+
+insert {  ?x a java:Class } where { { ?x a java:NormalClass } union { ?x a java:AbstractClass } };
+insert {  ?x java:inherits ?y  }  where {  ?x java:extends+ ?y  };
+insert {  ?x java:realizes ?y } where {  ?x java:implements/java:extends* ?y  };
+
+
+insert { ?x java:isInLocalPackage true } where { ?x java:inPackage [a java:LocalPackage] };
+
+insert { ?x java:isCompEle true } 
+where {
+  values ?ci { java:Class java:Interface }
+  ?x java:inPackage ?pkg; a ?ci; java:hasMethod [].
+  filter exists { ?pkg a java:LocalPackage }
+  filter not exists { filter regex(str(?pkg), "(test|debug|example)s?(\\.|$)") } 
+  filter not exists { filter regex(str(?x), "^(Test|Debug[A-Z])|(Test|Debug|Exception|Log(ger)?)s?(Manager|Interface|Impl?)?$") }
+  filter not exists { ?x java:filePathIs ?p. filter regex(str(?p), "[/\\\\](test|example|unused)s?[/\\\\]") }
+};

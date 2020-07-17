@@ -1,0 +1,344 @@
+
+prefix java: <http://www.semanticweb.org/megre/ontologies/2017/6/Java#>
+prefix js: <http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#>
+prefix jsbh: <http://www.semanticweb.org/megre/ontologies/2018/4/Java.StaticBehavior#>
+prefix acme: <http://www.semanticweb.org/megre/ontologies/2017/8/ACME#>
+prefix am: <http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#>
+prefix ptn: <http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+
+############## ViewElement ##############
+insert { ?x a am:ViewElement  }
+where { 
+  { ?x java:inherits ?y. filter regex(str(?y), "java\\.awt\\.(Component|Checkbox|Button|Dialog|Image|.+Layout)$") } union
+  { ?x java:realizes ?y. filter regex(str(?y), "java\\.awt\\.(LayoutManager2?)$") } union
+  { ?x java:inherits|java:realizes|java:hasFieldType ?y. filter regex(str(?y), "javax\\.swing\\.(J.+|.+Button|.+Editor|.+Border|.+Renderer|.+Icon|UI.+)$")} union
+  { ?x java:hasTypeParam [java:hasTypeBound ?y]. filter regex(str(?y), "javax\\.swing\\.(J.+|.+Button|.+Editor|.+Border|.+Renderer|.+Icon|UI+)$") } union
+  { ?x java:inherits ?ui. filter regex(str(?ui), "javax\\.swing\\.plaf\\..+(UI|LookAndFeel)$") } union
+  { ?x java:hasMethod [java:hasParamType|java:containsVarType|java:returnTypeIs ?m]. 
+    filter regex(str(?m), "java\\.awt\\.(Component|Image|Graphics(2D)?|Window|TrayIcon)$|javax\\.swing\\.(J.+|.*Icon|.+Font.+|.+Button)$") } union
+  { ?x java:hasMethod [jsbh:callsMethod ?y]. filter regex(str(?y), "javax\\.swing\\.(J.+|.+Button|.+Editor|.+Border|.+Renderer|.+Icon|UI.+)$") }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+
+############## ControllerElement ##############
+insert { ?x a am:ControllerElement }
+where {
+  { ?x java:inherits ?y. filter regex(str(?y), "(javax\\.swing|java\\.awt)\\..+(Adapter|Action)$") } union
+  { ?x java:realizes ?awt. filter regex(str(?awt), "(java\\.awt|javax\\.swing)\\..+(?<!Model)Listener$") } union
+  { ?x java:realizes ?awt. filter regex(str(?awt), "java\\.awt\\.datatransfer\\.Transferable$") } union
+  { ?x java:hasMethod [java:hasParamType java:java.awt.event.ActionEvent] }
+
+  filter exists { ?x java:isCompEle true }
+};
+
+
+############## ModelElement ##############
+insert { ?x a am:ModelElement }
+where {
+  { ?x java:realizes ?y. filter regex(str(?y), "javax\\.swing\\.event\\..+ModelListener$") } 
+  union { ?x java:implements ?y. filter regex(str(?y), "(javax\\.swing\\..+Model|java\\.io\\.Serializable)$") }
+  union { ?x java:extends ?y. filter regex(str(?y), "javax\\.swing\\..+Model$") }
+
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x java:refers [a am:ViewElement] }
+  minus { ?x java:refers [a am:ControllerElement] }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+
+## View/Controller Overlap ##
+
+delete { ?x a am:ViewElement }
+where {
+  ?x a am:ControllerElement.
+  filter exists { ?x a am:ViewElement }
+  filter exists { filter regex(str(?x), "(Action|Controller|Listener|Event|Mouse|MouseMotion)s?(Adapter|Factory|Handler|Manager|Interface|Impl?)?$") }
+};
+
+delete { ?x a am:ControllerElement }
+where {
+  ?x a am:ControllerElement.
+  filter exists { ?x a am:ViewElement }
+};
+
+delete { ?x a am:ViewElement }
+insert { ?x a am:ControllerElement }
+where {
+  ?x a am:ViewElement
+  filter not exists { ?x a am:ControllerElement }
+  filter exists { filter regex(str(?x), "(Action|Controller|Listener|Event|Mouse|MouseMotion)s?(Adapter|Factory|Handler|Manager|Interface|Impl?)?$") }
+};
+
+
+## Semantic ##
+
+# cmmEle
+insert { ?x a java:cmmEle }
+where {
+  ?x java:isCompEle true; java:inPackage ?pkg.
+  filter regex(str(?pkg), "\\.(utils?|common)$")
+};
+
+# ViewElement
+insert { ?x a am:ViewElement }
+where {
+  { ?x java:inPackage ?pkg. filter regex(str(?pkg), "\\.(menu|panel|button|view(er)?)") }
+  union { ?x java:inPackage []. filter regex(str(?x), 
+    "(View(er)?|Button|Dialog|Menu(Bar)?|StatusBar|Slider|Panel?|Skin|LookAndFeel|Image|Icon|Window|Color|Frame|UI|Layout|Renderer|TextArea|Font)s?(Factory|Container|Manager|Visitor|Interface|Impl?)?$") }
+  
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x a java:cmmEle }
+  filter not exists { [a am:ModelElement] java:refers ?x }  
+  filter not exists { ?x java:inPackage []. filter regex(str(?x), "(Action|BackgroundWorker|Controller|Listener|Event|Mouse|MouseMotion|Transfer|Service)s?(Adapter|Factory|Handler|Manager|Interface|Impl?)?$") }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+# ControllerElement
+insert { ?x a am:ControllerElement }
+where {
+  { ?x java:inPackage ?pkg. filter regex(str(?pkg), "\\.(control|action|service)s?.*(?!model|view)") }  
+  union { ?x java:inPackage []. filter regex(str(?x), "(Action|BackgroundWorker|Controller|Listener|Event|Mouse|MouseMotion|Transfer|Service)s?(Adapter|Factory|Handler|Manager|Interface|Impl?)?$") }
+  
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x a java:cmmEle }
+  filter not exists { [a am:ModelElement] java:refers ?x }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+# ModelElement
+insert { ?x a am:ModelElement }
+where {
+  { ?x java:inPackage ?pkg. filter regex(str(?pkg), "\\.[^\\.]*(model|data|mode)s?.*(?!control|view)") }
+  union { ?x java:inPackage ?pkg. filter regex(str(?pkg), "\\.(io|reader|decoder|encoder)s?.*(?!control|view)")
+    minus { [a am:ControllerElement] java:inPackage ?pkg }
+    minus { [a am:ViewElement] java:inPackage ?pkg } }
+  union { ?x java:inPackage []. filter regex(str(?x), "(Model|Bean|Data|Cache)s?(Factory|Manager)?$") }
+  union { # beans: only has get/set methods
+    select distinct ?x where {
+      ?x a java:Class; java:hasMethod ?y
+      minus { 
+        select distinct ?x where {
+          ?x a java:Class; java:hasMethod ?y.
+          filter not exists { { ?y java:isConstructor true } union { filter regex(str(?y), "\\.(get|set|equals|clone|hashCode|is|toString|new|create|copy|compare)[^\\.]*$") } }
+      }}
+      filter regex(str(?y), "\\.(get|set|equals|clone|hashCode|is|toString|new|create|copy|compare)[^\\.]*$")
+      filter exists { ?x java:inPackage[^java:inPackage [a am:ModelElement]] }
+    }
+  }
+  union { ?x java:hasMethod [jsbh:callsMethod ?mtd]. filter regex(str(?mtd), "java\\.sql\\..+") } 
+  
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x a java:cmmEle }
+  # minus { ?x java:acquaints [a am:ViewElement] } 
+  # minus { ?x java:acquaints [a am:ControllerElement] }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+
+# ViewElement
+insert { ?x a am:ViewElement }
+where {
+  { ?x java:hasField ?fld. filter regex(str(?fld), "[cC]ontroller$") }
+  union { ?x java:hasFieldType ?fldType. filter regex(str(?fldType), "Controller$") }
+  union { ?x java:hasMethod ?mtd. filter regex(str(?mtd), "(get|set|create|make).*Controller$") }
+
+  
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x a java:cmmEle }
+  filter not exists { [a am:ModelElement] java:refers ?x }  
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+# ControllerElement
+insert { ?x a am:ControllerElement }
+where {
+  { ?x java:hasField ?fld. 
+    minus { ?fld java:fieldTypeIs [a java:Primitive] } 
+    filter regex(str(?fld), "[vV]iew$") }
+  union { ?x java:hasFieldType ?fldType. filter regex(str(?fldType), "View$") }
+  
+  
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { ?x a java:cmmEle }
+  filter not exists { [a am:ModelElement] java:refers ?x }
+  
+  filter exists { ?x java:isCompEle true }
+};
+
+
+## package type ##
+
+insert { ?pkg a ?typev. ?pkg a ?typem. ?pkg a ?typec }
+where {
+  {select (count(distinct ?x) as ?a) (count(distinct ?y) as ?b) (count(distinct ?z) as ?c) ?pkg
+    where {
+      ?pkg a java:LocalPackage.
+      optional { ?x java:inPackage ?pkg; a am:ViewElement }
+      optional { ?y java:inPackage ?pkg; a am:ModelElement }
+      optional { ?z java:inPackage ?pkg; a am:ControllerElement }
+    } group by ?pkg
+  }
+  filter(?a > 0 || ?b > 0 || ?c > 0)
+  bind(if(?a>?b && ?a>?c, java:ViewPackage, owl:NamedIndividual) as ?typev) 
+  bind(if(?b>?a && ?b>?c, java:ModelPackage, owl:NamedIndividual) as ?typem) 
+  bind(if(?c>?a && ?c>?b, java:ControllerPackage, owl:NamedIndividual) as ?typec) 
+};
+
+insert { ?x a ?typev; a ?typec; a ?typem }
+where {
+  values ?pt { java:ViewPackage java:ModelPackage java:ControllerPackage }
+  ?x java:isCompEle true; java:inPackage [a ?pt].
+  filter not exists { ?x java:hasModifier "public" }
+  minus { { ?x a am:ModelElement } union { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  bind(if(?pt=java:ViewPackage, am:ViewElement, owl:NamedIndividual) as ?typev)
+  bind(if(?pt=java:ControllerPackage, am:ControllerElement, owl:NamedIndividual) as ?typec)
+  bind(if(?pt=java:ModelPackage, am:ModelElement, owl:NamedIndividual) as ?typem)
+};
+
+
+## Transitive/Dependence ##
+
+#== ModelElement ==#
+
+# ModelElement: transitive
+insert { ?x a am:ModelElement }
+where {
+  { select distinct ?x where { 
+      { [a am:ViewElement] java:acquaints ?x } union { [a am:ControllerElement] java:acquaints ?x } 
+  }}
+  ?x java:inPackage [a java:ModelPackage].
+
+  minus { { ?x a am:ModelElement } union { ?x a am:ViewElement } union { ?x a am:ControllerElement } }
+  minus { { ?x java:acquaints [a am:ControllerElement] } union { ?x java:acquaints [a am:ModelElement] } }
+    
+  filter exists { ?x java:isCompEle true }
+};
+
+# ModelElement: extends
+insert { ?x a am:ModelElement }
+where {
+  [a am:ModelElement; java:extends ?p]
+  filter (?p!=java:java.lang.Object)
+  minus{ {?p a am:ViewElement} union {?p a am:ControllerElement} }
+
+  ?x java:extends ?p.  
+  minus{ {?x a am:ViewElement} union {?x a am:ModelElement} union {?x a am:ControllerElement} }
+  filter exists { ?x java:isCompEle true }
+
+  ?x java:inPackage [a java:ModelPackage]
+};
+
+# ModelElement: implements
+insert { ?x a am:ModelElement } 
+where {
+  [a am:ModelElement; java:implements ?p]
+  minus{ {?p a am:ViewElement} union {?p a am:ControllerElement} }
+
+  ?x java:implements ?p.  
+  minus{ {?x a am:ViewElement} union {?x a am:ModelElement} union {?x a am:ControllerElement} }
+  filter exists { ?x java:isCompEle true }
+
+  ?x java:inPackage [a java:ModelPackage]
+};
+
+
+#== ViewElement ==#
+
+# ViewElement: transitive
+insert { ?x a am:ViewElement } 
+where {
+  ?y a am:ViewElement.
+  ?y java:refers ?x.
+  filter exists { ?x java:inPackage [a java:ViewPackage] }
+  minus { { ?x a am:ViewElement } union { ?x a am:ControllerElement } union { ?x a am:ModelElement } }
+  minus { [a am:ModelElement; java:acquaints ?y] }
+  minus { [a am:ModelElement; java:acquaints ?x] }
+
+  filter exists { ?x java:isCompEle true }
+};
+
+# ViewElement: extends
+insert { ?x a am:ViewElement } 
+where {
+  [a am:ViewElement; java:extends ?p]
+  filter (?p!=java:java.lang.Object)
+  minus{ {?p a am:ModelElement} union {?p a am:ControllerElement} }
+
+  ?x java:extends ?p.  
+  minus{ {?x a am:ViewElement} union {?x a am:ModelElement} union {?x a am:ControllerElement} }
+  filter exists { ?x java:isCompEle true }
+
+  ?x java:inPackage [a java:ViewPackage]
+};
+
+# ViewElement: implements
+insert { ?x a am:ViewElement } 
+where {
+  [a am:ViewElement; java:implements ?p]
+  minus{ {?p a am:ModelElement} union {?p a am:ControllerElement} }
+
+  ?x java:implements ?p.  
+  minus{ {?x a am:ViewElement} union {?x a am:ModelElement} union {?x a am:ControllerElement} }
+  filter exists { ?x java:isCompEle true }
+
+  ?x java:inPackage [a java:ViewPackage]
+};
+
+
+############## MVC ##############
+
+insert { am:ViewInstance a am:View; am:containsElement ?x. } 
+where {  ?x a am:ViewElement. };
+
+insert { am:ControllerInstance a am:Controller; am:containsElement ?y. }
+where { ?y a am:ControllerElement. };
+
+insert { am:ModelInstance a am:Model; am:containsElement ?z. }
+where { ?z a am:ModelElement. };
+
+insert {
+  ?c a acme:Connector.
+  ?mX a acme:Port. ?mY a acme:Port.
+  ?x a acme:Role. ?y a acme:Role.
+  ?insX acme:hasInterface ?mX.
+  ?insY acme:hasInterface ?mY.
+  ?c acme:hasEndpoint ?x; acme:hasEndpoint ?y.
+  ?x acme:attachedTo ?mX.
+  ?y acme:attachedTo ?mY.
+}
+where {
+  ?x a ?ta; java:hasMethod ?mX. ?mX jsbh:callsMethod ?mY.
+  ?y a ?tb; java:hasMethod ?mY.
+
+  filter (?ta=am:ViewElement || ?ta=am:ControllerElement || ?ta=am:ModelElement)
+  filter (?tb=am:ViewElement || ?tb=am:ControllerElement || ?tb=am:ModelElement)
+  filter (?x!=?y && ?ta!=?tb)
+  
+  ?insX am:containsElement ?x.
+  ?insY am:containsElement ?y.
+  bind(uri(concat(str(am:), "c.", sha1(concat(str(?mX), str(?mY))))) as ?c).    
+};
+
+insert {
+  am:MVCInstance a ptn:MVC; am:containsComponent ?x; am:containsComponent ?y; am:containsComponent ?z;
+    acme:containsConnector ?c
+}
+where { 
+  ?x a am:View. ?y a am:Controller. ?z a am:Model. 
+  ?c a acme:Connector
+  filter exists { [] a java:ViewPackage. [] a java:ControllerPackage. [] a java:ModelPackage }
+  filter exists { am:ViewInstance acme:hasInterface[]. am:ControllerInstance acme:hasInterface []. am:ModelInstance acme:hasInterface [] }
+  filter exists {
+    [a am:ControllerElement] java:acquaints [a am:ModelElement; java:inPackage [a java:ModelPackage]].
+    [a am:ViewElement] java:acquaints [a am:ModelElement; java:inPackage [a java:ModelPackage]] 
+  }
+};

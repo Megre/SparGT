@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#"
+     xml:base="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing"
+     xmlns:java="http://www.semanticweb.org/megre/ontologies/2017/6/Java#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:js="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing">
+        <owl:imports rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#extends -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#extends"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#implements">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#dependsOn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.Component -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.Component">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.Graphics2D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.Graphics2D">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+        <java:inPackage rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.datatransfer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.datatransfer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.datatransfer.Transferable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.datatransfer.Transferable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ActionEvent -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ActionEvent">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ActionListener -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ActionListener">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ItemListener -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.ItemListener">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseAdapter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseAdapter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseListener -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseListener">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseMotionListener -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.MouseMotionListener">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.WindowListener -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#java.awt.event.WindowListener">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractAction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractAction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractButton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractButton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractCellEditor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.AbstractCellEditor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JButton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JButton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JCheckBox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JCheckBox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JDesktopPane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JDesktopPane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JDialog -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JDialog">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JFrame -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JFrame">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JLabel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JLabel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JMenu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JMenu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JMenuBar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JMenuBar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JPanel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JPanel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JPopupMenu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JPopupMenu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JTable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JTable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JToolTip -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.JToolTip">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.TransferHandler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.TransferHandler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.border -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.border">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.border.AbstractBorder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.border.AbstractBorder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.basic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.basic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.basic.BasicPanelUI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.basic.BasicPanelUI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.metal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.metal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.metal.MetalButtonUI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.plaf.metal.MetalButtonUI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.table -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.table">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.table.TableCellEditor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.table.TableCellEditor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree.DefaultCellRenderer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree.DefaultCellRenderer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree.TreeCellRenderer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java.Swing#javax.swing.tree.TreeCellRenderer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

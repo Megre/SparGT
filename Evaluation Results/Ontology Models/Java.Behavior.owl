@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#"
+     xml:base="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior"
+     xmlns:jbh="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#"
+     xmlns:java="http://www.semanticweb.org/megre/ontologies/2017/6/Java#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:bh="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior">
+        <owl:imports rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#accessedField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#accessedField">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#fieldAccMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#fieldAccMethod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:comment>The method that the field accessing event occurs.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#methodCalled -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#methodCalled">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#MethodEntry"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#methodCaller -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#methodCaller">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Object"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#modifedField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#modifedField"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#visitedField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#visitedField"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#atTimePoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#atTimePoint">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#State"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#isClinit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#isClinit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#isInit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#isInit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#objTag -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#objTag">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Tag for the object</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ownerObjTag -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ownerObjTag">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Tag for the object that owns another object</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldModi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#FieldModi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+        <rdfs:comment>Field Modification</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#MethodEntry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#MethodEntry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#MethodExit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#MethodExit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ObjectAlloc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ObjectAlloc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ThreadEnd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ThreadEnd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ThreadStart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/Java.Behavior#ThreadStart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/Behavior#Event"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

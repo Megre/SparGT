@@ -1,0 +1,15 @@
+
+prefix java: <http://www.semanticweb.org/megre/ontologies/2017/6/Java#>
+prefix jsbh: <http://www.semanticweb.org/megre/ontologies/2018/4/Java.StaticBehavior#>
+
+insert {  ?x java:refers ?y } 
+where { 
+  { ?x java:hasFieldType ?y } 
+  union { ?x java:hasMethod [java:hasParamType|java:containsVarType|java:returnTypeIs ?y] } 
+  union { ?x java:hasMethod [jsbh:instantiatesClass ?y] }
+  union { ?x java:hasMethod [jsbh:callsMethod [^java:hasMethod ?y]] }
+};
+
+insert { ?x java:dependsOn ?y } where { ?x java:refers+ ?y };
+
+insert { ?x java:acquaints ?y } where { ?x java:dependsOn ?y. filter exists { ?y a java:Class } };

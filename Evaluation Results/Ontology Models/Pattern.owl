@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#"
+     xml:base="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ptn="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#absOperIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#absOperIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeOperIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#absRoleIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#absRoleIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeOperIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeOperIs"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#concImpRoleIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#concImpRoleIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#containsRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#containsRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#impOperIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#impOperIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeOperIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#impRoleIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#impRoleIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#refinedAbsRoleIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#refinedAbsRoleIs">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#bridgeRoleIs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbsOper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbsOper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbsRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbsRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbstractFactory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#AbstractFactory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Adapter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Adapter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Blackboard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Blackboard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Bridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DPElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Builder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Builder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#CS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#CS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ChainOfResponsibiligy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ChainOfResponsibiligy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Command -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Command">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Composite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Composite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ConcImpRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ConcImpRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DPElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DPElement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Decorator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Decorator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Facade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Facade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#FactoryMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#FactoryMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Flyweight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Flyweight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ImpOper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ImpOper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ImpRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ImpRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Interpreter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Interpreter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Iterator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Iterator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Layers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Layers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#MVC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#MVC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Mediator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Mediator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Memonto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Memonto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Observer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Observer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#PAC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#PAC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#PaF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#PaF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Prototype -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Prototype">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Proxy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Proxy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#RefinedAbsRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#RefinedAbsRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#BridgeElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Singleton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Singleton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#State">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Strategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Strategy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#TemplateMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#TemplateMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Visitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#Visitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#DesignPattern"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

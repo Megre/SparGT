@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#"
+     xml:base="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:am="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC">
+        <owl:imports rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#MVC -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#MVC">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/10/Pattern#ArchPattern"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Client"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Controller"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Model"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsComponent"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#View"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachCalleePort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachCalleePort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachCalleeRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachCalleeRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#AttachConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Client -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Client">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Controller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Controller">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerAttachCallerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerAttachCallerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerAttachCallerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerAttachCallerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerCreatorRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerInitializerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerInitializerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerInitializerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerInitializerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerUpdaterPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerUpdaterPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerUpdaterRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerUpdaterRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConsumerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConsumerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConsumerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataConsumerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataProviderPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataProviderPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataProviderRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#DataProviderRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventHandlerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventHandlerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventHandlerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventHandlerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventRegistrarPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventRegistrarPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventRegistrarRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#EventRegistrarRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#Model">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelCreatorConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelCreatorConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelCreatorRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelCreatorRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelInitializerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelInitializerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelInitializerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelInitializerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#NofitierPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#NofitierPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#NotifierRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#NotifierRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCalleePort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCalleePort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ModelPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCalleeRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCalleeRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCallerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCallerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ControllerPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCallerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceCallerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ServiceConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#UpdateConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#UpdateConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#View -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#View">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#containsElement"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewElement"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewAttachCallerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewAttachCallerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewAttachCallerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewAttachCallerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewCreatorConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewCreatorConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Connector"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewCreatorRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewCreatorRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewElement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewInitializerPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewInitializerPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewInitializerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewInitializerRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Port"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewUpdaterPort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewUpdaterPort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewPort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewUpdaterRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/8/ACME.MVC#ViewUpdaterRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/8/ACME#Role"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

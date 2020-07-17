@@ -1,0 +1,731 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/megre/ontologies/2017/6/Java#"
+     xml:base="http://www.semanticweb.org/megre/ontologies/2017/6/Java"
+     xmlns:java="http://www.semanticweb.org/megre/ontologies/2017/6/Java#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#acquaints -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#acquaints">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#aggregates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#aggregates"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#arrayOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#arrayOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Array"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#containsVarType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#containsVarType">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#declaredIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#containsVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#containsVariable">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#variableContainedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#declaredIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#declaredIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#dependsOn"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#extends -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#extends">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#fieldIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#fieldIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasField"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#fieldTypeIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#fieldTypeIs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#filePathIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#filePathIs"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasField">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasFieldType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasFieldType">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasMethod">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#methodIn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasParam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasParam">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Param"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasParamType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasParamType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Enum"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasTypeBound -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasTypeBound">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#TypeParam"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasTypeParam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasTypeParam">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#implements">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#inPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#inPackage">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#inherits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#inherits"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#inheritsMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#inheritsMethod">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#instanceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#instanceOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Object"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#methodIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#methodIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#missingProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#missingProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramTypeIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramTypeIs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Param"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#realizes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#refers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#refers"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#returnTypeIs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#returnTypeIs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#variableContainedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#variableContainedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Variable"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#variableType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#variableType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Variable"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasModifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#hasModifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#isCompEle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#isCompEle">
+        <rdfs:comment>is component element?</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#isConstructor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#isConstructor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#isForTest -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#isForTest"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#isInLocalPackage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#isInLocalPackage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#methodSig -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#methodSig">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method signature:
+methodName: paramType1, paramType2, ...</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramTypes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#paramTypes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#AbstractClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#AbstractClass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#AbstractMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#AbstractMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Array -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Array"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Enum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Enum"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Field"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Interface"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#LocalPackage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#LocalPackage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Missing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Missing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#NormalClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#NormalClass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Class"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#NormalMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#NormalMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Object"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Param -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Param"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#RemotePackage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#RemotePackage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#StandardPackage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#StandardPackage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Package"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#TypeParam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#TypeParam"/>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#Variable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Variable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#boolean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#boolean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#byte -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#byte">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#char -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#char">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#double -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#double">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#float -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#float">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#int -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#int">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#long -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#long">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/megre/ontologies/2017/6/Java#short -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/megre/ontologies/2017/6/Java#short">
+        <rdf:type rdf:resource="http://www.semanticweb.org/megre/ontologies/2017/6/Java#Primitive"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
